@@ -28,7 +28,7 @@ def grab():
 
 def mail(addr = "gloriachou.pku.edu.cn",file=defaultPicName):
     user = "differlong@pku.edu.cn"
-    password = "miracle2016"
+    password = ""#邮箱密码
     yag = yagmail.SMTP(user=user,password=password,host="smtp.pku.edu.cn",port="25")
     
     now = time.localtime()
@@ -41,7 +41,8 @@ def mail(addr = "gloriachou.pku.edu.cn",file=defaultPicName):
 
 def mainloop():
     while True:
-        if time.localtime().tm_hour > 23:
+        now = time.localtime()
+        if 60 *now.tm_hour + now.tm_min > 23*60 + 0 or 60*now.tm_hour+now.tm_min < 5*60 + 0:
             grab()
             mail()
             sound.speak("现在电脑处于监控状态，没有事情尽快睡觉，后果自负！")

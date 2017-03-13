@@ -17,7 +17,7 @@ file = "安全启动.pyw"
 
 
 def joke():
-    APIKey = "a8d98ff483b2498580e9e7b4d02aefe4"
+    APIKey = "a8d98ff483b2498580e9e7b4d02aefe4"#图灵API-Key,有需求可以自己去官网申请一个，免费，这个是可以测试用，不定时更换。
     url = "http://www.tuling123.com/openapi/api"
     data = {"key":APIKey,"info":"讲个笑话"}
     try:
